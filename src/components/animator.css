@@ -1,0 +1,138 @@
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-color: rgb(50, 221, 87)
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+
+.split-transition-appear,
+.split-transition-enter {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.left-transition-appear,
+.left-transition-enter {
+  left: 0;
+  background: url('../../public/assets/ps.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left-transition::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+
+
+
+.left-transition-appear-active,
+.left-transition-enter-active {
+   border-color: rgb(0 0 0);
+  background-color: rgb(27, 185, 67);
+  border-color: rgb(27, 185, 67);
+  color: #000;
+};
+
+.right-transition-appear,
+.right-transition-enter {
+  right: 0;
+  background: url('../../public/assets/xbox.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right-transition::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.right-transition-appear-active,
+.right-transition-enter-active{
+background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+
+.btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border: rgb(255, 255, 255) solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+}
+
+.left-btn-transition-enter, .left-btn-transition-appear, .left-btn-transition-enter-active,
+.left-btn-transition-appear-active{
+     border-color: rgb(0 0 0);
+  background-color: rgb(255, 255, 255);
+ /* border-color: rgb(255, 255, 255);*/
+  color: #000;
+}
+
+.right-btn-transition-enter, .right-btn-transition-appear, .right-btn-transition-enter-active,
+.right-btn-transition-appear-active{
+ background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+
+h1 {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.hover-left.left {
+  width: var(--hover-width);
+}
+
+.hover-left.right {
+  width: var(--other-width);
+}
+
+.hover-right.right {
+  width: var(--hover-width);
+}
+
+.hover-right.left {
+  width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
+
